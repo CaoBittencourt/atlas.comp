@@ -1,0 +1,12 @@
+Package: atlas.comp
+Type: Package
+Title: A Professional Competence Coefficient
+Version: 1.0.0
+Author: Cao Bittencourt
+Maintainer: Cao Bittencourt <caobittencourt@gmail.com>
+Description: This is a statistical coefficient to measure professional competence, accounting for the degree of generality of a professional profile.
+Depends: atlas.gene, atlas.ind
+Remotes: github::caobittencourt/atlas.gene, github::caobittencourt/atlas.ind
+License: What license is it under?
+Encoding: UTF-8
+LazyData: true
