@@ -8,7 +8,7 @@
 # # Git packages
 # chr_git <- c(
 #   'CaoBittencourt' = 'atlas.gene',
-#   'CaoBittencourt' = 'atlas.ind'
+#   'CaoBittencourt' = 'atlas.kind'
 # )
 # 
 # # genevate / install CRAN packages
