@@ -50,10 +50,10 @@
 # 
 # rm(chr_pkg, chr_git)
 # 
-# 
+
 # [FUNCTIONS] ---------------------------
-# - Competency function ---------------------------------------------------
-fun_comp_competency <- function(
+# - Competence function ---------------------------------------------------
+fun_comp_competence <- function(
     dbl_profile
     , dbl_scale_lb = 0
     , dbl_scale_ub = 100
@@ -126,16 +126,16 @@ fun_comp_competency <- function(
         , dbl_generality =
           dbl_generality
       )
-  ) -> dbl_competency
+  ) -> dbl_competence
   
   # Output
-  return(dbl_competency)
+  return(dbl_competence)
   
 }
 
 # # [TEST] ------------------------------------------------------------------
-# # - Competency test -------------------------------------------------------
-# fun_comp_competency(
+# # - Competence test -------------------------------------------------------
+# fun_comp_competence(
 #   dbl_profile =
 #     rnorm(50, 100, 25) |>
 #     pmax(0) |>
@@ -144,7 +144,7 @@ fun_comp_competency <- function(
 #   , dbl_scale_ub = 100
 # )
 # 
-# fun_comp_competency(
+# fun_comp_competence(
 #   dbl_profile =
 #     rnorm(50, 50, 25) |>
 #     pmax(0) |>
@@ -153,7 +153,7 @@ fun_comp_competency <- function(
 #   , dbl_scale_ub = 100
 # )
 # 
-# fun_comp_competency(
+# fun_comp_competence(
 #   dbl_profile =
 #     rnorm(50, 50, 5) |>
 #     pmax(0) |>
@@ -162,7 +162,7 @@ fun_comp_competency <- function(
 #   , dbl_scale_ub = 100
 # )
 # 
-# fun_comp_competency(
+# fun_comp_competence(
 #   dbl_profile =
 #     rnorm(50, 50, 0) |>
 #     pmax(0) |>
