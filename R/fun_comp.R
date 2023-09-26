@@ -118,7 +118,7 @@ fun_comp_competency <- function(
           dbl_scale_lb
       )
     , w =
-      fun_ind_indispensability(
+      fun_kind_indispensability(
         dbl_profile = 
           dbl_profile
         , dbl_scale_lb = 
