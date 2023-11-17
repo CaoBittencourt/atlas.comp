@@ -1,7 +1,7 @@
 Package: atlas.comp
 Type: Package
 Title: A Professional Competence Coefficient
-Version: 1.0.2
+Version: 1.0.3
 Author: Cao Bittencourt
 Maintainer: Cao Bittencourt <caobittencourt@gmail.com>
 Description: This is a statistical coefficient to measure professional competence, accounting for the degree of generality of a professional profile.
