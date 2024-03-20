@@ -1,12 +1,12 @@
 Package: atlas.comp
 Type: Package
 Title: A Career Profile Competence Coefficient
-Version: 1.0.4
+Version: 1.0.5
 Author: Cao Bittencourt
 Maintainer: Cao Bittencourt <caobittencourt@gmail.com>
-Description: This is a statistical coefficient to measure professional competence, accounting for the degree of generality of a professional profile.
-Depends: atlas.gene, atlas.kind
-Remotes: github::caobittencourt/atlas.gene, github::caobittencourt/atlas.kind
+Description: This is a statistical coefficient to measure the competence of a skill set, accounting for its degree of generality and the relative importance of each of its attributes.
+Depends: atlas.gene, atlas.aeq
+Remotes: github::caobittencourt/atlas.gene, github::caobittencourt/atlas.aeq
 License: What license is it under?
 Encoding: UTF-8
 LazyData: true

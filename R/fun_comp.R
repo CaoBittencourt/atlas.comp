@@ -8,7 +8,7 @@
 # # Git packages
 # chr_git <- c(
 #   'CaoBittencourt' = 'atlas.gene',
-#   'CaoBittencourt' = 'atlas.kind'
+#   'CaoBittencourt' = 'atlas.aeq'
 # )
 # 
 # # genevate / install CRAN packages
@@ -124,7 +124,7 @@ fun_comp_competence <- function(
           dbl_scale_lb
       )
     , w =
-      fun_kind_indispensability(
+      fun_aeq_aequivalence(
         dbl_profile = 
           dbl_profile
         , dbl_scale_lb = 
