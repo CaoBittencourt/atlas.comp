@@ -59,27 +59,27 @@ fun_comp_competence <- function(
     , dbl_scale_ub = 100
     , dbl_generality = NULL
 ){
-  
+
   # Arguments validation
   stopifnot(
     "'dbl_profile' must be numeric." =
       is.numeric(dbl_profile)
   )
-  
+
   stopifnot(
     "'dbl_scale_lb' must be numeric." =
       is.numeric(dbl_scale_lb)
   )
-  
+
   stopifnot(
     "'dbl_scale_ub' must be numeric and greater than 'dbl_scale_lb'." =
       all(
         is.numeric(dbl_scale_ub)
-        , dbl_scale_ub > 
+        , dbl_scale_ub >
           dbl_scale_lb
       )
   )
-  
+
   stopifnot(
     "'dbl_generality' must be either NULL or numeric." =
       any(
@@ -87,30 +87,30 @@ fun_comp_competence <- function(
         , is.null(dbl_generality)
       )
   )
-  
+
   # Data wrangling
   dbl_scale_lb[[1]] -> dbl_scale_lb
-  
+
   dbl_scale_ub[[1]] -> dbl_scale_ub
-  
+
   dbl_profile[!is.na(
     dbl_profile
   )] -> dbl_profile
-  
+
   if(is.null(dbl_generality)){
-    
+
     fun_gene_generality(
       dbl_profile
       , dbl_scale_lb =
         dbl_scale_lb
-      , dbl_scale_ub = 
+      , dbl_scale_ub =
         dbl_scale_ub
     ) -> dbl_generality
-    
+
   }
-  
+
   dbl_generality[[1]] -> dbl_generality
-  
+
   # Weighted mean of normalized item scores
   # adjusted by item importance and generality
   weighted.mean(
@@ -125,19 +125,98 @@ fun_comp_competence <- function(
       )
     , w =
       fun_aeq_aequivalence(
-        dbl_profile = 
+        dbl_profile =
           dbl_profile
-        , dbl_scale_lb = 
+        , dbl_scale_lb =
           dbl_scale_lb
         , dbl_generality =
           dbl_generality
       )
   ) -> dbl_competence
-  
+
   # Output
   return(dbl_competence)
-  
+
 }
+
+# # - Competence function (linear weights) ---------------------------------------------------
+# fun_comp_competence <- function(
+#     dbl_profile
+#     , dbl_scale_lb = 0
+#     , dbl_scale_ub = 100
+#     , dbl_generality = NULL
+# ){
+# 
+#   # Arguments validation
+#   stopifnot(
+#     "'dbl_profile' must be numeric." =
+#       is.numeric(dbl_profile)
+#   )
+# 
+#   stopifnot(
+#     "'dbl_scale_lb' must be numeric." =
+#       is.numeric(dbl_scale_lb)
+#   )
+# 
+#   stopifnot(
+#     "'dbl_scale_ub' must be numeric and greater than 'dbl_scale_lb'." =
+#       all(
+#         is.numeric(dbl_scale_ub)
+#         , dbl_scale_ub >
+#           dbl_scale_lb
+#       )
+#   )
+# 
+#   stopifnot(
+#     "'dbl_generality' must be either NULL or numeric." =
+#       any(
+#         is.numeric(dbl_generality)
+#         , is.null(dbl_generality)
+#       )
+#   )
+# 
+#   # Data wrangling
+#   dbl_scale_lb[[1]] -> dbl_scale_lb
+# 
+#   dbl_scale_ub[[1]] -> dbl_scale_ub
+# 
+#   dbl_profile[!is.na(
+#     dbl_profile
+#   )] -> dbl_profile
+# 
+#   if(is.null(dbl_generality)){
+# 
+#     fun_gene_generality(
+#       dbl_profile
+#       , dbl_scale_lb =
+#         dbl_scale_lb
+#       , dbl_scale_ub =
+#         dbl_scale_ub
+#     ) -> dbl_generality
+# 
+#   }
+# 
+#   dbl_generality[[1]] -> dbl_generality
+# 
+#   # Weighted mean of normalized item scores
+#   # adjusted by item importance and generality
+#   weighted.mean(
+#     x =
+#       dbl_profile / (
+#         dbl_scale_ub -
+#           dbl_scale_lb
+#       ) -
+#       dbl_scale_lb / (
+#         dbl_scale_ub -
+#           dbl_scale_lb
+#       )
+#     , w = dbl_profile
+#   ) -> dbl_competence
+# 
+#   # Output
+#   return(dbl_competence)
+# 
+# }
 
 # # [TEST] ------------------------------------------------------------------
 # # - Competence test -------------------------------------------------------
