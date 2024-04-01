@@ -1,7 +1,7 @@
 Package: atlas.comp
 Type: Package
 Title: A Career Profile Competence Coefficient
-Version: 1.0.6
+Version: 1.0.7
 Author: Cao Bittencourt
 Maintainer: Cao Bittencourt <caobittencourt@gmail.com>
 Description: This is a statistical coefficient to measure the competence of a skill set, accounting for its degree of generality and the relative importance of each of its attributes.
